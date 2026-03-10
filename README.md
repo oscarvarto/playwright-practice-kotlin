@@ -1,4 +1,4 @@
-# Playwright Testing - Kotlin API
+# Playwright Testing - Java API (Using Kotlin code)
 
 This repository is a Kotlin-based Playwright testing workspace with support for browser tests, API tests, opt-in
 external integrations, and a Turso-backed JUnit 5 statistics pipeline.
@@ -6,7 +6,7 @@ external integrations, and a Turso-backed JUnit 5 statistics pipeline.
 It mirrors the functionality of the [Java project](https://github.com/oscarvarto/playwright-practice) but leverages
 idiomatic Kotlin:
 
-- **Arrow** instead of Functional Java
+- **Arrow** instead of functionalJava
 - **Kotlin's type system** (type aliases, `@JvmInline value class`) instead of Checker Framework
 - **Data classes and idiomatic Kotlin features** instead of Lombok
 - **Kotest + JUnit 5 integration** for test specifications
