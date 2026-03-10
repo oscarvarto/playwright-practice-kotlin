@@ -1,0 +1,24 @@
+[workspace]
+name = "test-statistics-dashboard"
+version = "0.1.0"
+description = "Streamlit dashboard for JUnit 5 test statistics backed by Turso"
+channels = ["conda-forge"]
+platforms = ["osx-arm64"]
+
+[dependencies]
+python = ">=3.13,<3.14"
+
+[pypi-dependencies]
+pyturso = "*"
+polars = "*"
+streamlit = "*"
+plotly = "*"
+pandas = "*"
+watchdog = "*"
+ruff = "*"
+
+[tasks]
+app = "streamlit run app.py"
+fmt = "ruff format ."
+lint = "ruff check --fix ."
+check = "ruff format --check . && ruff check ."

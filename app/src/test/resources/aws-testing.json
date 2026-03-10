@@ -1,0 +1,22 @@
+{
+  "aws-testing": {
+    "mode": "local",
+    "services": ["secretsmanager"],
+    "local": {
+      "endpoint": "http://localhost:4566",
+      "region": "us-east-1"
+    },
+    "testcontainers": {
+      "image": "localstack/localstack:4.0",
+      "region": "us-east-1"
+    },
+    "secretsmanager": {
+      "secrets": {
+        "playwright-practice/github": {
+          "username": "test-user",
+          "token": "test-token-12345"
+        }
+      }
+    }
+  }
+}

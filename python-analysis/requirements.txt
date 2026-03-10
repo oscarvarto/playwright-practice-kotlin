@@ -1,0 +1,6 @@
+pyturso
+polars
+streamlit
+plotly
+pandas
+watchdog
