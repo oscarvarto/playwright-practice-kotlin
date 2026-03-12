@@ -1,7 +1,11 @@
 package oscarvarto.mx.aws
 
+import assertk.assertThat
+import assertk.assertions.isEqualTo
+import assertk.assertions.isNotNull
+import assertk.assertions.isNullOrEmpty
+import assertk.assertions.isTrue
 import io.github.oshai.kotlinlogging.KotlinLogging
-import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.AfterEach
 import org.junit.jupiter.api.Assertions.assertThrows
 import org.junit.jupiter.api.BeforeEach
@@ -29,20 +33,17 @@ class SecretsProviderAwsTestingTest {
     @Test
     @DisplayName("should resolve secrets from LocalStack when env var is not set")
     fun shouldResolveSecretsFromLocalStack() {
-        assertThat(System.getenv("GITHUB_USER"))
-            .`as`("GITHUB_USER should not be set as environment variable")
+        assertThat(System.getenv("GITHUB_USER"), "GITHUB_USER should not be set as environment variable")
             .isNullOrEmpty()
 
         val githubUser = SecretsProvider.get("GITHUB_USER")
         val githubToken = SecretsProvider.get("GITHUB_API_TOKEN")
 
-        assertThat(githubUser)
-            .`as`("GITHUB_USER should be resolved from LocalStack")
+        assertThat(githubUser, "GITHUB_USER should be resolved from LocalStack")
             .isNotNull()
             .isEqualTo("test-user")
 
-        assertThat(githubToken)
-            .`as`("GITHUB_API_TOKEN should be resolved from LocalStack")
+        assertThat(githubToken, "GITHUB_API_TOKEN should be resolved from LocalStack")
             .isNotNull()
             .isEqualTo("test-token-12345")
     }

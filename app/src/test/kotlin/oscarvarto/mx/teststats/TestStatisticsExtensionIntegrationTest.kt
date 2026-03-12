@@ -1,8 +1,14 @@
 package oscarvarto.mx.teststats
 
+import assertk.assertThat
+import assertk.assertions.contains
+import assertk.assertions.hasSize
+import assertk.assertions.isEqualTo
+import assertk.assertions.isGreaterThan
+import assertk.assertions.isGreaterThanOrEqualTo
+import assertk.assertions.isTrue
 import kotlinx.serialization.json.buildJsonObject
 import kotlinx.serialization.json.put
-import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Assertions.fail
 import org.junit.jupiter.api.Disabled
 import org.junit.jupiter.api.Test
@@ -18,7 +24,6 @@ import org.junit.platform.launcher.core.LauncherFactory
 import org.junit.platform.launcher.listeners.SummaryGeneratingListener
 import java.nio.file.Files
 import java.nio.file.Path
-import java.sql.Connection
 import java.sql.DriverManager
 import java.time.Duration
 import java.util.concurrent.atomic.AtomicInteger

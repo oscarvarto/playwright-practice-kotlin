@@ -33,7 +33,7 @@ dependencies {
     testImplementation(platform(libs.junit.bom))
     testImplementation(libs.junit.jupiter)
     testImplementation(libs.junit.platform.launcher)
-    testImplementation(libs.assertj)
+    testImplementation(libs.assertk)
     testImplementation(libs.logback.classic)
 
     // Database (test statistics)
